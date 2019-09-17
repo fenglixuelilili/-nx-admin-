@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>my-admin-nx-maskter</title>
+    <!-- <link rel="stylesheet" href=""> -->
+    <style>
+      .load{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top:0;
+        background-color: #7171C6;
+      }
+      .loadcenter{
+        position: absolute;
+        left: 0;
+        top:0;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+        /* height: 150px; */
+        height: 200px;
+        margin: auto;
+      }
+      .loading{
+        width: 150px;
+        height: 150px;
+        /* background-color: #fff; */
+        margin: 0 auto;
+        border: 3px solid transparent;
+        border-left-color:#fff; 
+        border-radius: 50%;
+        position: relative;
+        transform-origin: center center;
+        animation: animate1 2.5s linear infinite;
+        animation-fill-mode: forwards;
+      }
+      .loading::before{
+        content: '';
+        position: absolute;
+        top:15px;
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        border: 3px solid transparent;
+        border-left-color:#fff; 
+        border-radius: 50%;
+        transform-origin: center center;
+        animation: animate1 2s linear infinite;
+        animation-fill-mode: forwards;
+      }
+      .loading::after{
+        content: '';
+        position: absolute;
+        top:25px;
+        bottom: 25px;
+        right: 25px;
+        left: 25px;
+        border: 3px solid transparent;
+        border-left-color:#fff;
+        border-radius: 50%;
+        /* transition: animate1 2s; */
+        animation: animate1 1.5s  linear infinite;
+        animation-fill-mode: forwards;
+        transform-origin: center center;
+
+      }
+      @keyframes animate1 {
+        0%{
+          transform: rotateZ(0deg);
+        }
+        100%{
+          transform: rotateZ(360deg);
+        }
+      }
+      .loadtext{
+        text-align: center;
+        margin: 20px 0;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="load">
+        <div class="loadcenter">
+          <div class="loading">
+          </div>
+          <div class="loadtext">
+            请等待，系统正在加载中....
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
