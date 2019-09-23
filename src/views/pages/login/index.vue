@@ -2,22 +2,25 @@
   <div class="login">
     <div class="mask container">
       <div class="top-title">
-          <el-row>
-            <el-col :span="4" :offset='4'>
-              <div class="tip-img">
-                <img src="../../../assets/images/home/logo.png" alt="">
+        <el-row>
+          <el-col :span="9" :offset='4'>
+            <div class="tip-img">
+              <img src="../../../assets/images/home/logo.png" alt="">
+            </div>
+            <div class="tip-name">
+              {{website.info.title}}
+            </div>
+            <div class="list">
+              <div class="title-list" v-for="(item,i) in website.info.list" :key="i">
+                <span class="dian">.</span> √ {{item}}
               </div>
-              <div class="tip-name">
-                {{website.info.title}}
-              </div>
-              <div class="list">
-                <div class="title-list" v-for="(item,i) in website.info.list" :key="i">
-                  {{item}}
-                </div>
-              </div>
-            </el-col>
-          </el-row>
-        </div>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
+      <div class="login_tab">
+
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +47,7 @@ export default {
   right: 0;
   background:url('../../../assets/images/top_images/login.png') no-repeat;
   background-size: 100% 100%;
+  min-height:900px;
   .container{
     // width: 
   }
@@ -68,8 +72,21 @@ export default {
     color: #fff;
     padding-left: 10px;
     .title-list{
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
+    .dian{
+      margin-right: 10px;
+      font-weight: 800;
+    }
+  }
+  .login_tab{
+    position: absolute;
+    right: 40px;
+    top:200px;
+    width: 350px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
   }
 }
 </style>
