@@ -4,6 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from "@/store"
+import myaxios from "@/api/ajax.js"
+// 模拟接口数据
+import './mock'
 // element ui 框架
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -43,6 +46,7 @@ iconfontVersion.forEach(ele => {
 })
 
 Vue.config.productionTip = false
+Vue.prototype.$http = myaxios.http
 
 /* eslint-disable no-new */
 new Vue({

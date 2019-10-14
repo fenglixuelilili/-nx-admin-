@@ -19,7 +19,17 @@
         </el-row>
       </div>
       <div class="login_tab">
-
+        <div class="title">登陆</div>
+        <div class="tabs">
+           <el-tabs v-model="activeName">
+              <el-tab-pane label="密码登陆" name="passwordname">
+                 <userpass />
+              </el-tab-pane>
+              <el-tab-pane label="手机登陆" name="phonename">
+                <phonepass />
+              </el-tab-pane>
+            </el-tabs>
+        </div>
       </div>
     </div>
   </div>
@@ -27,14 +37,20 @@
 
 <script>
 import {mapGetters} from "vuex";
+import phonepass from "./phonepass"
+import userpass from "./userpass"
 export default {
   data(){
     return {
-
+      activeName:'passwordname'
     }
   },
   computed:{
     ...mapGetters(['website']),
+  },
+  components:{
+    phonepass,
+    userpass
   }
 }
 </script>
@@ -87,6 +103,19 @@ export default {
     height: 400px;
     background-color: #fff;
     border-radius: 10px;
+    .title{
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 20px;
+      // color:;
+      color: cornflowerblue;
+
+    }
+    .tabs{
+      padding:0 40px;
+    }
   }
 }
 </style>

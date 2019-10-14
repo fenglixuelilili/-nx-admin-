@@ -7,13 +7,13 @@ const codeUrl =  `${baseUrl}/code`;
 const env = process.env;
 if(env.NODE_ENV == 'production'){
   // 生成环境地址
-  baseUrl = ``;
+  baseUrl = `https://easy-mock.com/mock/5950a2419adc231f356a6636/vue-admin`;
 }else if(env.NODE_ENV == 'development'){
   // 开发环境地址
-  baseUrl = ``;
+  baseUrl = `https://easy-mock.com/mock/5950a2419adc231f356a6636/vue-admin`;
 }else if(env.NODE_ENV == 'test'){
   // 测试环境地址
-  baseUrl = ``;
+  baseUrl = `https://easy-mock.com/mock/5950a2419adc231f356a6636/vue-admin`;
 }
 export {
   baseUrl,

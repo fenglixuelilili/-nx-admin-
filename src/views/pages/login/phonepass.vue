@@ -1,6 +1,6 @@
 <template>
   <div class="phonepass">
-
+    手机登陆
   </div>
 </template>
 <script>
