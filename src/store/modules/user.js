@@ -1,5 +1,5 @@
-import {gettoken,settoken,removetoken } from "@/utils"
-import {request} from "@/api"
+import {gettoken,settoken,removetoken } from "@/utils/auth"
+import {login,login2} from "@/api"
 const state = {
   token:gettoken()
 };
@@ -11,19 +11,17 @@ const mutations = {
 
 const actions = {
   'login'({state,commit},userinfo){
+    // console.log(userinfo,'userinfo')
     let username = userinfo.name.trim()
+    let password = userinfo.password
     return new Promise((resolve,reject)=>{
-      request('/api/login',{
-        username,
-        password:userinfo
-      }).then(data=>{
-        if(data.state == 0){
-
-        }else{
-          let tokenvalue = data.data
-          commit('SET_TOKEN',tokenvalue)
-          resolve()
-        }
+      login(username,userinfo).then(data=>{
+        // console.log(data)
+        // 存下token：
+        settoken(data.token)
+        // 将token存到全局
+        commit('SET_TOKEN',data.token)
+        resolve()
       }).catch(error=>{
         reject(error)
       })

@@ -13,6 +13,16 @@ export function login(username, password) {
       }
     })
   }
+  export function login2(username, password) {
+    return myaxios.http({
+      url: '/api/login',
+      method: 'post',
+      data: {
+        username,
+        password
+      }
+    })
+  }
 //   获取用户信息
   export function getInfo(token) {
     return myaxios.http({
@@ -84,7 +94,7 @@ export function fetchList(query) {
       params: { name }
     })
   }
-//   
+//   权限相关的
 export const getUserList = params => { return axios.get(`${base}/user/list`, { params: params }) }
 
 export const getUserListPage = params => { return axios.get(`${base}/user/listpage`, { params: params }) }
@@ -97,39 +107,39 @@ export const editUser = params => { return axios.get(`${base}/user/edit`, { para
 
 export const addUser = params => { return axios.get(`${base}/user/add`, { params: params }) }
 // 权限相关的
-export function getUserListPage(params) {
-    return myaxios.http({
-      url: '/user/listpage',
-      method: 'get',
-      params: params
-    })
-  }
-  export function removeUser(params) {
-    return myaxios.http({
-      url: '/user/remove',
-      method: 'get',
-      params: params
-    })
-  }
-  export function batchRemoveUser(params) {
-    return myaxios.http({
-      url: '/user/batchremove',
-      method: 'get',
-      params: params
-    })
-  }
-  export function editUser(params) {
-    return myaxios.http({
-      url: '/user/edit',
-      method: 'get',
-      params: params
-    })
-  }
-  export function addUser(params) {
-    return myaxios.http({
-      url: '/user/add',
-      method: 'get',
-      params: params
-    })
-  }
+// export function getUserListPage(params) {
+//     return myaxios.http({
+//       url: '/user/listpage',
+//       method: 'get',
+//       params: params
+//     })
+//   }
+//   export function removeUser(params) {
+//     return myaxios.http({
+//       url: '/user/remove',
+//       method: 'get',
+//       params: params
+//     })
+//   }
+//   export function batchRemoveUser(params) {
+//     return myaxios.http({
+//       url: '/user/batchremove',
+//       method: 'get',
+//       params: params
+//     })
+//   }
+//   export function editUser(params) {
+//     return myaxios.http({
+//       url: '/user/edit',
+//       method: 'get',
+//       params: params
+//     })
+//   }
+//   export function addUser(params) {
+//     return myaxios.http({
+//       url: '/user/add',
+//       method: 'get',
+//       params: params
+//     })
+//   }
   

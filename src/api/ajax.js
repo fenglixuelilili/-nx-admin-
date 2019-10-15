@@ -1,5 +1,5 @@
 import axios from "axios";
-import {baseUrl} from "@/config"
+import {baseUrl} from "@/config/env.js"
 import { Message,MessageBox  } from "element-ui"
 import {gettoken} from "@/utils/auth.js"
 import store from "@/store"
@@ -12,10 +12,6 @@ var instance = axios.create({
     // 在发送请求之前做些什么
     if(gettoken()){
         config.headers['X-Token'] = gettoken()
-    }else{
-        Message({
-            message:'登陆超时，请重新登陆！'
-        })
     }
     return config;
   }, function (error) {

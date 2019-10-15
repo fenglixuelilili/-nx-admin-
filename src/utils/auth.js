@@ -1,11 +1,11 @@
 import jsCookie from "js-cookie"
 let token = 'token'
-export const getCookie=()=>{
+export const gettoken=()=>{
    return jsCookie.get(token)
 }
-export const setCookie=()=>{
+export const settoken=()=>{
     return jsCookie.set(token)
 }
-export const removeCookie=()=>{
+export const removetoken=()=>{
     return jsCookie.remove(token)
 }

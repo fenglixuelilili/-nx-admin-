@@ -70,7 +70,7 @@ export default {
     onSubmit(){
       this.$refs.loginform.validate((valid) => {
         if (valid) {
-          this.$store.dispatch('login').then(data=>{
+          this.$store.dispatch('login',this.loginform).then(data=>{
             // this.$router.push('/') 跳转到首页去
           })
         } else {
