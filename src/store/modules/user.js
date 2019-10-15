@@ -1,11 +1,15 @@
 import {gettoken,settoken,removetoken } from "@/utils/auth"
 import {login,login2} from "@/api"
 const state = {
-  token:gettoken()
+  token:gettoken(),
+  browserHeaderTitle:'my-nx-admin'
 };
 const mutations = {
   "SET_TOKEN"(state,value){
     state.token = value
+  },
+  "SET_BTOWSERHEADERTITLE"(state,action){
+    state.browserHeaderTitle = action.title
   }
 };
 

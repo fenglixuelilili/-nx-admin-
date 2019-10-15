@@ -71,7 +71,7 @@ export default {
       this.$refs.loginform.validate((valid) => {
         if (valid) {
           this.$store.dispatch('login',this.loginform).then(data=>{
-            // this.$router.push('/') 跳转到首页去
+            this.$router.push('/index/indexpage') //跳转到首页去
           })
         } else {
           

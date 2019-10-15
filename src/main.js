@@ -7,6 +7,8 @@ import store from "@/store"
 import myaxios from "@/api/ajax.js"
 // 模拟接口数据
 import './mock'
+// 权限管理
+import './permission.js'
 // element ui 框架
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';

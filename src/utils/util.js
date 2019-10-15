@@ -14,6 +14,6 @@ export const loadStyle = (url)=>{
 }
 // 设置浏览器的标题表头
 export const setTitle = (title)=>{
-  title = title?title:'默认管理后台'
+  title = title?(title+'-管理系统页面'):'默认管理后台'
   window.document.title = title
 }
